@@ -4,6 +4,8 @@ load("Results/S0_initialvalues/S0_initialvalues.Rdata")
 library(ggplot2)
 library(sf)
 library(viridis)
+library(tidyr)
+library(dplyr)
 
 yrs <- 55
 sims <- 500
@@ -288,7 +290,7 @@ ggsave(filename = "climate_scenarios.jpeg", plot = clim.scens,
 
 #comparing wood scenarios
 wood.scens <- ggplot(data=delta.N.data %>% 
-                       filter(delta.N.data$Scenario == "2" |
+                       filter(delta.N.data$Scenario == "3" |
                                 delta.N.data$Scenario == "5" | 
                                 delta.N.data$Scenario == "6" |
                                 delta.N.data$Scenario == "8" |
@@ -311,7 +313,7 @@ ggsave(filename = "wood_scenarios.jpeg", plot = wood.scens,
 
 #comparing flow scenarios
 lfy.scens <- ggplot(data=delta.N.data %>% 
-                       filter(delta.N.data$Scenario == "2" |
+                       filter(delta.N.data$Scenario == "3" |
                                 delta.N.data$Scenario == "7")) +
   geom_ribbon(aes(x=year, ymin=mean-1.96*se, ymax=mean+1.96*se, 
                   color=Scenario, fill=Scenario),  alpha=0.3, lty=0)+
