@@ -15,7 +15,7 @@ library(msm)
 select <- dplyr::select
 
 sims <- 10 # number of simulations (minimum of 10, maximum of 1000)
-current.yr <- 2025
+current.yr <- 2027
 yrs <- 2080 - current.yr # number of years into the future to simulate (max to 2080)
 nburn <- 5 # number of of years of burn in
 
@@ -98,7 +98,7 @@ source("Scripts/Inputs/recruitment_K.R") # Recruitment and carrying capacity par
     initN.bnt <- round(cbind(initN.bnt[,1], initN.bnt[,2:ncol(initN.bnt)]/50))
 
 # NO change scenario
-    #source("Troutmodel/Scripts/Inputs/nochange_scenario.R")
+    #source("Scripts/Inputs/nochange_scenario.R")
 
 ### Functions and empty objects ####
 source("Scripts/Model/functions_bothspp.R")  # load functions

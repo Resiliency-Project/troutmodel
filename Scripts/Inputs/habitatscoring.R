@@ -36,6 +36,11 @@ if(sims != dim(dN_lfy)[3]){
   dN_lfy <- dN_lfy[,,1:sims]
 }
 
+#subset the density data to the number of years defined in 'model.R'
+if(sims != dim(dN_lfy)[2]){
+  dN_lfy <- dN_lfy[,((55-yrs)+1):55,]
+}
+
 # create empty array for lfy scores
 lfyscores <- array(NA, dim=c(nrow(habdata), yrs, sims))
 

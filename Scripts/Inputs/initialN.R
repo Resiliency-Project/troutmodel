@@ -120,3 +120,4 @@ initN.bnt.reach <- cbind(area, as.data.frame(bntdensity*area$area.data.area.acre
   totalN.bkt <- as.data.frame(colSums(initN.bkt[,-1])) #sum all columns except units
   totalN.bnt <- as.data.frame(colSums(initN.bnt[,-1])) #sum all column except units
    
+  

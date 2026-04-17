@@ -38,6 +38,13 @@ if(sims != dim(d2.5)[3]){
   d4.8 <- d4.8[,,1:sims]
 }
 
+#subset the density data to the number of years defined in 'model.R'
+if(yrs != dim(d2.5)[2]){
+  d2.5 <- d2.5[,((55-yrs)+1):55,]
+  d3.8 <- d3.8[,((55-yrs)+1):55,]
+  d4.8 <- d4.8[,((55-yrs)+1):55,]
+}
+
 #Calculate temperature scores for each scenario
   # Scores are relative within each simulation
 for(k in 1:sims){
